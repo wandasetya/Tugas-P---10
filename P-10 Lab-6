@@ -1,7 +1,7 @@
 data = {}
 while True:
     print("")
-    g = input("(L)ihat, (T)ambah, (U)bah, (H)apus,(C)ari, (K)eluar: ")
+    g = input("(L)ihat, (T)ambah, (U)bah, (H)apus, (K)eluar: ")
     # Untuk keluar dari program
     if g.lower() == "k":
         print("Keluar dari program")
@@ -9,7 +9,7 @@ while True:
     # untuk melihat list
     elif g.lower() == "l":
         if data.items():
-            print("~~~~~~~~~~~~~~~~~~~~~~~~~Daftar Nilai~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~Daftar Nilai~~~")
             print()
             print("======================================================================================")
             print("|  No  |      NIM     |      NAMA      |   TUGAS  |   UTS   |   UAS   | AKHIR  |")
@@ -22,7 +22,7 @@ while True:
                 print("======================================================================================")
                 print("")
         else:
-            print("~~~~~~~~~~~~~~~~~~~~~~~~~Daftar Nilai~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~Daftar Nilai~~~")
             print()
             print("======================================================================================")
             print("|  No  |      Nama     |      NIM      |   TUGAS  |   UTS   |   UAS   | Nilai Akhir  |")
@@ -32,22 +32,22 @@ while True:
     # Untuk menambahkan data
     elif g.lower() == "t":
         print("Tambah Data")
-        nim   = int(input("NIM            : "))
-        nama  = input    ("Nama           : ")
-        uts   = int(input("Nilai UTS      : "))
-        uas   = int(input("Nilai UAS      : "))
+        nim = int(input  ("NIM            : "))
+        nama = input     ("Nama           : ")
+        uts = int(input  ("Nilai UTS      : "))
+        uas = int(input  ("Nilai UAS      : "))
         tugas = int(input("NIlai Tugas    : "))
         nilaiakhir = ((tugas) * 30 / 100 + (uts) * 35 / 100 + (uas) * 35 / 100)
         data[nama] = nim, tugas, uts, uas, nilaiakhir
     # Untuk mengubah data
     elif g.lower() == "u":
         print("Edit Data Nilai Mahasiswa")
-        nama = input("Masukan Nama      :")
+        nama = input("Masukan Nama     :")
         if nama in data.keys():
-            nim        = input("NIM               :")
-            tugas      = int(input("Nilai Tugas Baru  : "))
-            uts        = int(input("Nilai UTS Baru    : "))
-            uas        = int(input("Nilai UAS Baru    : "))
+            nim = input("NIM               :")
+            tugas = int(input("Nilai Tugas Baru  : "))
+            uts = int(input("Nilai UTS Baru    : "))
+            uas = int(input("Nilai UAS Baru    : "))
             nilaiakhir = ((tugas) * 30 / 100 + (uts) * 35 / 100 + (uas) * 35 / 100)
             data[nama] = nim, tugas, uts, uas, nilaiakhir
         else:
@@ -60,26 +60,7 @@ while True:
             del data[nama]
         else:
             print("Data {0} tidak ada".format(nama))
-        # Untuk Mencari data
-    elif g.lower() == "c":
-        print("Cari Data Nilai Mahasiswa")
-        nama = input(" Masukan Nama: ")
-        if nama in data.keys():
-            print("~~~~~~~~~~~~~~~~~~~~~~Daftar Nilai~~~~~~~~~~~~~~~~~~~~~~~~")
-            print()
-            print("==================================================================")
-            print("~~~~~~~~~~~NAMA  NIM  TUGAS  UTS UAS NILAI AKHIR~~~~~~~~~~~~~~~~~~~")
-            print("| {0} | {1} | ".format(nama, data[nama]))
-            print("==================================================================")
-        else:
-            print("Datanya {0} tidak ada ".format(nama))
-    else:
-        print("\\~~~~~~~~~~~~~~~~~~~~~~~~~~~Daftar Nilai~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//")
-        print("======================================================================================")
-        print("|  No  |      Nama     |      NIM      |   TUGAS  |   UTS   |   UAS   | Nilai Akhir  |")
-        print("======================================================================================")
-        print("|                                 Tidak Ada Daftar Nilai                             |")
-        print("======================================================================================")
+        
 
 else:
     print("Pilih Menu Yang Tersedia")
