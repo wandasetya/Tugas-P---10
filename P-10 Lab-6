@@ -42,7 +42,7 @@ while True:
     # Untuk mengubah data
     elif g.lower() == "u":
         print("Edit Data Nilai Mahasiswa")
-        nama = input("Masukan Nama     :")
+        nama = input("Masukan Nama      :")
         if nama in data.keys():
             nim = input("NIM               :")
             tugas = int(input("Nilai Tugas Baru  : "))
